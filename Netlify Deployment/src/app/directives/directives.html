@@ -1,0 +1,124 @@
+<div class="main-container">
+
+    <div class="item-card">
+        <table>
+            <tr>
+                <td>
+                    @if(isStaticNoteVisible === true) {
+                        <h2>This is a static note with the true value!</h2>
+                    } @else {
+                        <h2>This static note has false value.</h2>
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="item-card">
+        <table>
+            <tr>
+                <td>
+                    <button (click)="showNote()">Show Note</button>
+                </td>
+                <td>
+                    <button (click)="hideNote()">Hide Note</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @if(isNoteVisible === true) {
+                        <p>This is a note!</p>
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="item-card">
+        <div class="content-group centered-content">
+            <button (click)="toggleNote()" [class.hide]="isParagraphVisible" [class.show]="!isParagraphVisible">
+                {{ isParagraphVisible ? 'Hide' : 'Show' }}
+            </button>
+
+            @if (isParagraphVisible) {
+                <p>This is the paragraph content.</p>
+            }
+        </div>
+    </div>
+
+    <div class="item-card">
+        <div class="month-check-group">
+            <label> Month:</label>
+            <div class="month-output-static">
+                @if(monthNameStatic == 'Jan') {
+                    <span>January</span>
+                } @else if(monthNameStatic == 'Feb') {
+                    <span>February</span>
+                } @else if(monthNameStatic == 'Mar') {
+                    <span>March</span>
+                } @else {
+                    <span>Wrong Input!</span>
+                }
+            </div>
+            <div>
+                <input type="text" [(ngModel)]="monthNameDynamic">
+            </div>
+            <div>
+                 @if(monthNameDynamic == 'Jan') {
+                    <span>January</span>
+                } @else if(monthNameDynamic == 'Feb') {
+                    <span>February</span>
+                } @else if(monthNameDynamic == 'Mar') {
+                    <span>March</span>
+                } @else {
+                    <span>Wrong Input!</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="item-card">
+        <table>
+            <tr>
+                <td>
+                    <ul class="simple-list">
+                        @for (item of cityList; track $index)
+                        {
+                            <li>{{item}}</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="item-card full-item">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student No</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of studentList; track $index) {
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.stud_name}}</td>
+                        <td>{{item.course}}</td>
+                        <td>
+                            @if (item.isActive == true) {
+                                <p class="status-tag status-active">Active</p>
+                            } @else {
+                                <p class="status-tag status-inactive">Inactive</p>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

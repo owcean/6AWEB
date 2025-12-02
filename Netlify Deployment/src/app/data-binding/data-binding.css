@@ -1,0 +1,133 @@
+/* Headings */
+h1, h2 {
+  color: #d63384;
+  text-align: center;
+  font-family: "Times New Roman", serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(214, 51, 132, 0.2);
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(214, 51, 132, 0.2);
+}
+
+.container h1,
+.container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.container p {
+  font-size: 18px;
+  text-align: center;
+  color: #444;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff0f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.15);
+}
+
+.passing {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.failing {
+  color: #c62828;
+  font-weight: bold;
+}
+
+/* Box */
+.box {
+  margin-top: 15px;
+  border-radius: 12px;
+  background: #ffe6f0;
+  box-shadow: 0 4px 8px rgba(214, 51, 132, 0.2);
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(214, 51, 132, 0.35);
+}
+
+p {
+  font-size: 18px;
+  margin: 12px 0;
+  text-align: center;
+  color: #444;
+  line-height: 1.6;
+}
+
+p.greeting {
+  font-size: 22px;
+  font-weight: bold;
+  color: #c2185b;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #ffe6f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(214, 51, 132, 0.2);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* Buttons */
+button {
+  background-color: #c2185b;
+  color: #ffe6f0;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(214, 51, 132, 0.25);
+}
+
+button:hover {
+  background-color: #ad1457;
+  color: #fff0f5;
+  transform: translateY(-2px);
+}
+
+input {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 14px;
+  border: 2px solid #d63384;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff0f5;
+  color: #d63384;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff80ab;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
