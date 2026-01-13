@@ -1,0 +1,62 @@
+  <div class="container">
+    <h2>{{ title | titlecase }}</h2>
+
+    <div class="section">
+      <h3>Date Pipes</h3>
+      Today's date : {{presentDate | date}}<br/>
+      This is a short date : {{presentDate | date:'shortDate' }} <br/>
+      This line shows the full date : {{presentDate | date:'fullDate' }} <br/>
+      This will show a formatted date: {{presentDate | date:'M/dd/yyyy'}} <br/>
+      This indicates the hours and minutes: {{presentDate | date:'h:mm'}}<br/>
+      <p><strong>Developer:</strong> Krisean Tienzo</p>
+    </div>
+
+    <div class="section">
+      <h3>Chained Pipes</h3>
+      Date with uppercase: {{presentDate | date:'fullDate' | uppercase}}<br/>
+      Date with lowercase: {{presentDate | date:'medium' | lowercase}}
+    </div>
+
+    <div class="section">
+      <h3>Currency Pipe</h3>
+      <p>Price: {{ price | currency }} </p>
+      <p>Yen: {{ price | currency:'JPY' }} </p>
+    </div>
+
+    <div class="section">
+      <h3>Slice Pipe (Fruits)</h3>
+      <p>Start index 2: {{Fruits | slice:2}} </p>
+      <p>Start and end (1-4): {{Fruits | slice:1:4}} </p>
+      <p>Negative index: {{Fruits | slice:-2}} </p>
+    </div>
+
+    <div class="section">
+      <h3>Async Pipe</h3>
+      Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}
+    </div>
+
+    <div class="section">
+      <h3>Decimal Pipe</h3>
+      <p>Apply Formatting: {{decimalNum1 | number: '1.1-1'}} </p>
+      <p>Apply Formatting: {{decimalNum2 | number: '1.1-4'}} </p>
+    </div>
+
+  <div class="section">
+    <h3>Student Details</h3>
+    <ul>
+    @for (property of Student | keyvalue; track property.key) {
+      <li>
+        <strong>{{ property.key | titlecase }}:</strong> {{ property.value }}
+      </li>
+    }
+    </ul>
+  </div>
+
+    <div class="section">
+      <h3>Percent Pipe</h3>
+      <p> {{num1 | percent}} </p>
+      <p> {{num1 | percent:'2.2-5'}} </p>
+      <p> {{num2 | percent:'1.2-5'}} </p>
+      <p> {{num1 * num2 | percent:'1.2-3'}} </p>
+    </div>
+  </div>
