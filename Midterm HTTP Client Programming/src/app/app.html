@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>{{ title() }}</h1>
+
+  <h2>List from Main</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+      <tbody>
+        @for (user of httpusers; track user.id; let i = $index) {
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.website }}</td>
+          </tr>
+        }
+      </tbody>
+  </table>
+  <h2>Limited Cart List (First 5)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Cart ID</th>
+        <th>User ID</th>
+        <th>Total Products</th>
+        <th>Total Quantity</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (cart of httpcarts; track cart.id) {
+        <tr>
+          <td>{{ cart.id }}</td>
+          <td>{{ cart.userId }}</td>
+          <td>{{ cart.totalProducts }}</td>
+          <td>{{ cart.totalQuantity }}</td>
+          <td>${{ cart.total }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<router-outlet />

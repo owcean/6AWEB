@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFD6CC;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #6F0000;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #E50000;
+  padding-bottom: 8px;
+  margin: 15px 0;
+}
+
+h2 {
+  color: #6F0000;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 15px 0 8px 0;
+  border-bottom: 2px solid #E50000;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+table {
+  width: 85%;
+  max-width: 1050px; /* The "Sweet Spot" for desktop */
+  border-collapse: collapse;
+  margin: 5px 0 25px 0;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(111, 0, 0, 0.15);
+}
+
+th {
+  background-color: #eb7878;
+  color: #FFD6CC;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid #FFD6CC;
+}
+
+td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #FFD6CC;
+  color: #444;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 214, 204, 0.3);
+}
+
+tr:hover {
+  background-color: rgba(229, 0, 0, 0.08);
+  transition: background-color 0.2s ease;
+}
