@@ -1,0 +1,45 @@
+nav {
+  /* Dark charcoal/slate background */
+  background-color: #7a1b1b;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Brand on left, links on right */
+  padding: 0 40px;
+  color: #ffffff;
+
+  /* Stick to the top */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fdf5e6; /* Hover turns slightly cream */
+}
+
+/* Requirement: Style for active page */
+.active-link {
+  border-bottom: 3px solid #fdf5e6; /* Cream underline matches body */
+  padding-bottom: 5px;
+}

@@ -1,0 +1,44 @@
+.search-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-container input:focus {
+    border-color: #7a1b1b; /* Matching the maroon header color in your screenshot */
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #7a1b1b;
+
+}
+
+.service-item h3 {
+    color: #333;
+    border-bottom: 2px solid #7a1b1b;
+    padding-bottom: 5px;
+    margin-top: 0;
+}

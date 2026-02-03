@@ -1,0 +1,9 @@
+.section-title {
+  text-align: center;
+  color: #7a1b1b;
+  margin: 40px 0 20px 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

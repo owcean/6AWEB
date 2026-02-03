@@ -1,0 +1,13 @@
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchText" placeholder="Search by title or content...">
+</div>
+
+<div class="list-container">
+  <div class="service-item" *ngFor="let post of (allPosts$ | async | filterPosts:searchText)">
+
+    <h3>{{ post.title | uppercase }}</h3>
+
+    <p>{{ post.body | truncate:80 }}</p>
+
+    </div>
+</div>

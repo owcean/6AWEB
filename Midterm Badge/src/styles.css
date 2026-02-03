@@ -1,0 +1,21 @@
+body {
+  background-color: #fdf5e6;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #7a1b1b;
+}
+
+.card, .service-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 2px solid #7a1b1b;
+}
