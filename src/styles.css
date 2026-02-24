@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Mono:wght@300;400;500&display=swap');
+
+/* ── Tokens ───────────────────────────────────────── */
+:root {
+  --cream:         #F5EFE0;
+  --cream-border:  #E0D0B8;
+  --cream-deep:    #EDE2CC;
+  --red:           #8B1E1E;
+  --red-light:     #B03030;
+  --red-muted:     #C9A6A6;
+  --ink:           #1C0F0A;
+  --ink-mid:       #5A3A2A;
+  --ink-faint:     #9A7A6A;
+}
+
+/* ── Global reset ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream) !important;
+  font-family: 'DM Mono', monospace;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* Angular's root element must fill viewport */
+app-root {
+  display: block;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+/* ── Navbar ───────────────────────────────────────── */
+.main-nav {
+  background: var(--red) !important;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 52px;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+}
+
+/* ── Brand ────────────────────────────────────────── */
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  line-height: 1;
+}
+
+/* ── Nav links container ──────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  height: 100%;
+}
+
+/* ── Individual link ──────────────────────────────── */
+.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 224, 0.6);
+  text-decoration: none;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.2s;
+}
+
+/* Hover underline reveal */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: var(--cream);
+  background: transparent;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active pill */
+.nav-link.active {
+  color: var(--red);
+  background: var(--cream);
+  font-weight: 500;
+  padding: 6px 16px;
+  margin: 0 4px;
+  height: auto;
+}
+
+.nav-link.active::after { display: none; }
+.nav-link.active:hover  { background: #ede4d0; color: var(--red); }
