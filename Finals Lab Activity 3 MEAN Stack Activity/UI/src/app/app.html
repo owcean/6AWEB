@@ -1,0 +1,85 @@
+<div class="wrapper">
+
+  <!-- Header -->
+  <header class="page-header">
+    <div class="header-left">
+      <h1>Book<em>s</em></h1>
+      <p>Your personal reading collection</p>
+    </div>
+    <span class="count-pill">
+      <strong>{{ books.length }}</strong>&nbsp;{{ books.length === 1 ? 'book' : 'books' }}
+    </span>
+  </header>
+
+  <!-- Form -->
+  <div class="form-card">
+    <div class="form-eyebrow">Add a new book</div>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="newBook">Title</label>
+        <input id="newBook" placeholder="e.g. The Great Gatsby" />
+      </div>
+
+      <div class="field">
+        <label for="newAuthor">Author</label>
+        <input id="newAuthor" placeholder="e.g. F. Scott Fitzgerald" />
+      </div>
+
+      <div class="field span2">
+        <label for="newDesc">Description</label>
+        <input id="newDesc" placeholder="A brief description of the book…" />
+      </div>
+
+      <div class="field">
+        <label for="newCategory">Category</label>
+        <input id="newCategory" placeholder="e.g. Fiction" />
+      </div>
+
+      <div class="field">
+        <label for="newPrice">Price</label>
+        <input id="newPrice" placeholder="e.g. $14.99" />
+      </div>
+    </div>
+
+    <button class="btn-add" (click)="addBook()">
+      <span class="plus">+</span>
+      Add to Collection
+    </button>
+  </div>
+
+  <!-- Book List -->
+  <div class="section-row">
+    <span class="section-label">Collection</span>
+    <div class="section-line"></div>
+  </div>
+
+  @for (book of books; track book.id) {
+    <div class="book-card">
+      <div class="book-spine"></div>
+
+      <div class="book-body">
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
+        <div class="book-desc">{{ book.desc }}</div>
+        <div class="book-tags">
+          <span class="tag">{{ book.category }}</span>
+        </div>
+      </div>
+
+      <div class="book-side">
+        <span class="book-price">{{ book.price }}</span>
+        <button class="btn-delete" (click)="deleteBook(book.id)">Remove</button>
+      </div>
+    </div>
+  } @empty {
+    <div class="empty-state">
+      <span class="empty-icon">📚</span>
+      <h3>No books yet</h3>
+      <p>Add your first book above to begin your collection</p>
+    </div>
+  }
+
+</div>
+
+<router-outlet />
